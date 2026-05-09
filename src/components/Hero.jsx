@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
+import heroVideo from '../assets/hero.mp4';
 
 const Hero = () => {
   const contentVariants = {
@@ -17,7 +18,7 @@ const Hero = () => {
       {/* Background Video */}
       <video 
         className={styles.bgVideo}
-        src="/bg-video.mp4"
+        src={heroVideo}
         autoPlay
         muted
         loop
