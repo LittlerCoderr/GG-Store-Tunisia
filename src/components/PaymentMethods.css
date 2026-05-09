@@ -1,0 +1,62 @@
+.payment-section {
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+.payment-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--bg-primary);
+}
+
+.payment-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.payment-card:hover .payment-icon {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: scale(1.05);
+}
+
+.d17-icon {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.sobflous-icon {
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  font-size: 0.9rem;
+}
+
+.crypto-icon {
+  background: linear-gradient(135deg, #f7931a 0%, #f2a900 100%);
+  font-size: 2.5rem;
+}

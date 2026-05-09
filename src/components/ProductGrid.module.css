@@ -1,0 +1,71 @@
+.categorySlice {
+  margin-bottom: 4rem;
+}
+
+.sliceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 112, 243, 0.3);
+  padding-bottom: 0.8rem;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #888;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.filterBtn:hover, .filterBtn.active {
+  border-color: #0070f3;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 112, 243, 0.3);
+}
+
+.sliceTitle {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+}
+
+.sliceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .sliceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sliceTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sliceGrid {
+    grid-template-columns: 1fr;
+  }
+}
