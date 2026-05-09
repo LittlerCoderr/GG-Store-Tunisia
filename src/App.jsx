@@ -69,7 +69,7 @@ function AppContent() {
           detectRetina: true,
         }}
       />
-      <Router>
+      <Router basename="/GG-Store-Tunisia">
         <Header />
         <main>
           <Routes>
