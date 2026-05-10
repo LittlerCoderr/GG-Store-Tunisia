@@ -37,7 +37,7 @@ const Footer = () => {
           <div className={styles.footerCol}>
             <h4>Socials</h4>
             <ul>
-              <li><a href="#discord">Discord</a></li>
+              <li><a href="https://discord.gg/8AFCMq8xZV" target="_blank" rel="noopener noreferrer">Discord</a></li>
               <li><a href="#twitter">Twitter</a></li>
               <li><a href="#instagram">Instagram</a></li>
             </ul>

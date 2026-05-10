@@ -11,9 +11,9 @@ const CommunityPortal = () => {
         <h2 className={styles.portalTitle}>Enter the Mainframe</h2>
         <p className={styles.portalSubtext}>Join thousands of players in the GG-Store Discord.</p>
         
-        <button className={styles.glitchBtn}>
+        <a href="https://discord.gg/8AFCMq8xZV" target="_blank" rel="noopener noreferrer" className={styles.glitchBtn}>
           <span className={styles.btnText}>CONNECT TO DISCORD</span>
-        </button>
+        </a>
       </div>
     </section>
   );
