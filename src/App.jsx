@@ -4,10 +4,13 @@ import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
+import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
+import ProtectedRoute from './components/ProtectedRoute';
 import LandingPage from './pages/LandingPage';
 import CategoryPage from './pages/CategoryPage';
 import CheckoutPage from './pages/CheckoutPage';
+import UserProfile from './pages/UserProfile';
 import Footer from './components/Footer';
 
 function AppContent() {
@@ -76,6 +79,14 @@ function AppContent() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/category/:categoryId" element={<CategoryPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <UserProfile />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />
@@ -87,9 +98,11 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <CartProvider>
-        <AppContent />
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <AppContent />
+        </CartProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

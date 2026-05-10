@@ -78,7 +78,7 @@ const InGameCurrencyHub = ({ products }) => {
               >
                 <div className={styles.imageWrapper}>
                   <motion.img 
-                    src={game.imagePath} 
+                    src={`${import.meta.env.BASE_URL}${game.imagePath}`}
                     alt={game.name} 
                     animate={{ y: [0, -8, 0] }}
                     transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
@@ -108,7 +108,7 @@ const InGameCurrencyHub = ({ products }) => {
               <div className={styles.visualColumn}>
                 <div className={styles.posterWrapper}>
                   <motion.img 
-                    src={selectedGame.imagePath} 
+                    src={`${import.meta.env.BASE_URL}${selectedGame.imagePath}`}
                     alt={selectedGame.name} 
                     className={styles.poster} 
                     animate={{ y: [0, -10, 0] }}

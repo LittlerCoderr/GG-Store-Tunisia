@@ -1,0 +1,774 @@
+/* ═══════════════════════════════════════════════════════
+   UserProfile.module.css — Obsidian/Neon Dashboard
+═══════════════════════════════════════════════════════ */
+
+/* Page wrapper */
+.page {
+  min-height: calc(100vh - 80px);
+  padding: 2.5rem 0 4rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── Sidebar ─────────────────────────────────────── */
+.sidebar {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* User summary */
+.sidebarUser {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+}
+
+.avatarMd {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0070f3 0%, #7928ca 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: white;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 112, 243, 0.35);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.onlineDot {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+  background: #00d26a;
+  border-radius: 50%;
+  border: 2px solid #0a0a0a;
+  box-shadow: 0 0 6px rgba(0, 210, 106, 0.8);
+}
+
+.sidebarUserInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebarName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebarBalance {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  color: #0070f3;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 1rem 0;
+}
+
+/* Sidebar nav */
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.navBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  text-align: left;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.navBtn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navBtnActive {
+  color: white;
+}
+
+.navIndicator {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 112, 243, 0.12);
+  border: 1px solid rgba(0, 112, 243, 0.25);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* ── Main Content ─────────────────────────────────── */
+.main {
+  min-height: 500px;
+}
+
+.tabContent {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.sectionHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sectionTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.sectionSub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+/* ── Profile Tab ─────────────────────────────────── */
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Avatar section */
+.avatarSection {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.avatarLarge {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #0070f3, #7928ca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: white;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(0, 112, 243, 0.35);
+}
+
+.avatarLetterLg {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: white;
+}
+
+.avatarOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: white;
+}
+
+.avatarLarge:hover .avatarOverlay {
+  opacity: 1;
+}
+
+.avatarInfo {
+  flex: 1;
+}
+
+.avatarName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: white;
+}
+
+.avatarEmail {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Field grid */
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.fieldInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.fieldInput:focus-within {
+  border-color: rgba(0, 112, 243, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+}
+
+.fieldIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-right: 0.6rem;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.8rem 0;
+}
+
+.input::placeholder {
+  color: rgba(136, 136, 136, 0.5);
+}
+
+/* Profile message */
+.profileMsg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.msgSuccess {
+  background: rgba(0, 210, 106, 0.08);
+  border: 1px solid rgba(0, 210, 106, 0.25);
+  color: #00d26a;
+}
+
+.msgError {
+  background: rgba(255, 77, 109, 0.08);
+  border: 1px solid rgba(255, 77, 109, 0.25);
+  color: #ff4d6d;
+}
+
+/* Save button */
+.saveBtn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #0070f3, #7928ca);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 112, 243, 0.3);
+  transition: box-shadow 0.2s;
+}
+
+.saveBtn:not(:disabled):hover {
+  box-shadow: 0 6px 30px rgba(0, 112, 243, 0.5);
+}
+
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Wallet Tab ───────────────────────────────────── */
+.balanceCard {
+  position: relative;
+  background: rgba(0, 112, 243, 0.06);
+  border: 1px solid rgba(0, 112, 243, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.balanceCardGlow {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 112, 243, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.balanceTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.balanceLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(0, 112, 243, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.refreshBtn {
+  background: rgba(0, 112, 243, 0.1);
+  border: 1px solid rgba(0, 112, 243, 0.2);
+  color: var(--accent-blue);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.refreshBtn:hover {
+  background: rgba(0, 112, 243, 0.2);
+}
+
+.spinning svg {
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.balanceAmount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.balanceNumber {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 40px rgba(0, 112, 243, 0.6);
+  line-height: 1;
+}
+
+.balanceCurrency {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(0, 112, 243, 0.8);
+  letter-spacing: 1px;
+}
+
+.balanceFooter {
+  margin-top: 1rem;
+}
+
+.balanceReadOnly {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* History section */
+.historySection {
+  margin-top: 0.5rem;
+}
+
+.historyTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* Transaction table */
+.txTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.txHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  padding: 0.5rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.txRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.txRow:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.txDate {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.txAmount {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00d26a;
+}
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badgeApproved {
+  background: rgba(0, 210, 106, 0.1);
+  border: 1px solid rgba(0, 210, 106, 0.3);
+  color: #00d26a;
+}
+
+.badgePending {
+  background: rgba(255, 167, 38, 0.1);
+  border: 1px solid rgba(255, 167, 38, 0.3);
+  color: #ffa726;
+}
+
+/* ── Purchases Tab ───────────────────────────────── */
+.purchaseList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.purchaseCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  gap: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.purchaseCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 112, 243, 0.2);
+}
+
+.purchaseLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.purchaseIcon {
+  color: #0070f3;
+  flex-shrink: 0;
+}
+
+.purchaseItem {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: white;
+}
+
+.purchaseDate {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.purchaseRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.purchasePrice {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+}
+
+.codeBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 112, 243, 0.08);
+  border: 1px solid rgba(0, 112, 243, 0.2);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+}
+
+.codeText {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  color: #4da6ff;
+  letter-spacing: 0.5px;
+}
+
+.copyBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.1rem;
+  transition: color 0.2s;
+}
+
+.copyBtn:hover {
+  color: white;
+}
+
+/* ── Settings Placeholder ────────────────────────── */
+.settingsPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+/* ── Loading & Empty States ──────────────────────── */
+.loadingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  gap: 0.6rem;
+}
+
+.emptyState p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+.emptyState span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.emptyIcon {
+  color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Spinner ─────────────────────────────────────── */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .sidebarNav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .navBtn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fullWidth {
+    grid-column: 1;
+  }
+
+  .balanceNumber {
+    font-size: 2.8rem;
+  }
+
+  .txHeader,
+  .txRow {
+    grid-template-columns: 1fr 80px 100px;
+  }
+
+  .purchaseCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .purchaseRight {
+    align-items: flex-start;
+  }
+}

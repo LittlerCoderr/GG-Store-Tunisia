@@ -69,7 +69,7 @@ const GiftCardsHub = ({ products }) => {
               >
                 <div className={styles.imageWrapper}>
                   <motion.img 
-                    src={brand.imagePath} 
+                    src={`${import.meta.env.BASE_URL}${brand.imagePath}`}
                     alt={brand.name} 
                     animate={{ y: [0, -8, 0] }}
                     transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
@@ -99,7 +99,7 @@ const GiftCardsHub = ({ products }) => {
               <div className={styles.visualColumn}>
                 <div className={styles.posterWrapper}>
                   <motion.img 
-                    src={selectedBrand.imagePath} 
+                    src={`${import.meta.env.BASE_URL}${selectedBrand.imagePath}`}
                     alt={selectedBrand.name} 
                     className={styles.poster} 
                     animate={{ y: [0, -10, 0] }}

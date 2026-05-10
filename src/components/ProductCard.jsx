@@ -26,7 +26,11 @@ const ProductCard = ({ product, isFeatured }) => {
         style={{ '--brand-glow': product.brandColor || 'rgba(0, 112, 243, 0.5)' }}
       >
         <div className={styles.imageContainer}>
-          <img src={product.imagePath} alt={product.title} className={styles.productImage} />
+          <img
+            src={product.imagePath.startsWith('http') ? product.imagePath : `${import.meta.env.BASE_URL}${product.imagePath}`}
+            alt={product.title}
+            className={styles.productImage}
+          />
           {product.isTrending && <span className={styles.badge}>TRENDING</span>}
           {product.isPopular && <span className={styles.popularBadge}>POPULAR CHOICE</span>}
         </div>
