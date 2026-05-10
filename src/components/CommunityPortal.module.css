@@ -60,6 +60,8 @@
 }
 
 .glitchBtn {
+  display: inline-block;
+  text-decoration: none;
   position: relative;
   padding: 1.2rem 3rem;
   background: transparent;
